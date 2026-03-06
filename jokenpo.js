@@ -44,3 +44,9 @@ function resetar(){
     document.getElementById("pc").src="pc.png";
     document.getElementById("placar").innerHTML="";
 }
+
+if('serviceWorken' in navigator){
+    window.addEventListener('load',()=>{
+        navigator.serviceWorker.register('sw.js').then(()=> console.log('reviceWorker registrado')).catch(err=> console.log('erro',err));
+    });
+    }
